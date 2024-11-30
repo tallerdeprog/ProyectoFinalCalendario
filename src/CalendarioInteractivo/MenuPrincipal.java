@@ -1,15 +1,20 @@
 package CalendarioInteractivo;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class MenuPrincipal extends javax.swing.JFrame {
 
     public MenuPrincipal() {
         initComponents();
         setLocationRelativeTo(null);  // Centra la ventana en la pantalla
-        
-        
-        
-        
+
+        Imagenes.loadImages();
+
+
     }
+
+   
 
     //
     @SuppressWarnings("unchecked")
@@ -141,9 +146,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
             public void run() {
                 new MenuPrincipal().setVisible(true);
             }
-        MenuPrincipal menuPrincipal = new MenuPrincipal();
-        
-            
+            //MenuPrincipal menuPrincipal = new MenuPrincipal();
+
         });
     }
 
