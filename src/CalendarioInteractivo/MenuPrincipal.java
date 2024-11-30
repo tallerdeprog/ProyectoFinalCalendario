@@ -9,113 +9,112 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);  // Centra la ventana en la pantalla
 
-        Imagenes.loadImages();
-
-
     }
-
-   
 
     //
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel1 = new java.awt.Panel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        calendario = new javax.swing.JButton();
+        guardarEvento = new javax.swing.JButton();
+        eventos = new javax.swing.JButton();
+        mostrarImagen = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-
-        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
-        panel1.setLayout(panel1Layout);
-        panel1Layout.setHorizontalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 541, Short.MAX_VALUE)
-        );
-        panel1Layout.setVerticalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
-        );
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
 
-        jButton1.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
-        jButton1.setText("Mostrar Calendario");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        calendario.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
+        calendario.setText("Mostrar Calendario");
+        calendario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                calendarioActionPerformed(evt);
             }
         });
+        jPanel1.add(calendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 275, 68));
 
-        jButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
-        jButton2.setText("Guardar Evento");
-        jButton2.setMaximumSize(new java.awt.Dimension(131, 23));
-        jButton2.setMinimumSize(new java.awt.Dimension(131, 23));
-
-        jButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
-        jButton3.setText("Visualizar Eventos");
-        jButton3.setMaximumSize(new java.awt.Dimension(131, 23));
-        jButton3.setMinimumSize(new java.awt.Dimension(131, 23));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        guardarEvento.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
+        guardarEvento.setText("Guardar Evento");
+        guardarEvento.setMaximumSize(new java.awt.Dimension(131, 23));
+        guardarEvento.setMinimumSize(new java.awt.Dimension(131, 23));
+        guardarEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                guardarEventoActionPerformed(evt);
             }
         });
+        jPanel1.add(guardarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 275, 68));
 
-        jButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
-        jButton4.setText("Mostrar Imagen");
-        jButton4.setMaximumSize(new java.awt.Dimension(131, 23));
-        jButton4.setMinimumSize(new java.awt.Dimension(131, 23));
+        eventos.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
+        eventos.setText("Visualizar Eventos");
+        eventos.setMaximumSize(new java.awt.Dimension(131, 23));
+        eventos.setMinimumSize(new java.awt.Dimension(131, 23));
+        eventos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 275, 71));
+
+        mostrarImagen.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
+        mostrarImagen.setText("Mostrar Imagen");
+        mostrarImagen.setMaximumSize(new java.awt.Dimension(131, 23));
+        mostrarImagen.setMinimumSize(new java.awt.Dimension(131, 23));
+        jPanel1.add(mostrarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 275, 70));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("CAP N' CAP");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/capibaraFondo1Menu.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 470));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(137, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(203, 203, 203))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void calendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calendarioActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Calendario ventanaCalendario = new Calendario();
+        // Establecer que cuando la ventana secundaria se cierre, la ventana principal se haga visible
+        ventanaCalendario.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Mostrar la ventana principal nuevamente cuando se cierre la ventana secundaria
+                setVisible(true);  // 'this' se refiere a la ventana principal
+            }
+        });
+
+        // Hacer visible la ventana secundaria
+        ventanaCalendario.setVisible(true);
+
+        // Ocultar la ventana principal
+        this.setVisible(false);
+
+    }//GEN-LAST:event_calendarioActionPerformed
+
+    private void eventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_eventosActionPerformed
+
+    private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guardarEventoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -152,11 +151,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton calendario;
+    private javax.swing.JButton eventos;
+    private javax.swing.JButton guardarEvento;
     private javax.swing.JLabel jLabel1;
-    private java.awt.Panel panel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton mostrarImagen;
     // End of variables declaration//GEN-END:variables
 }
