@@ -13,7 +13,8 @@ public class Evento {
         this.hora = hora;
         this.descripcion = descripcion;
     }
-
+//////teto deidad
+    
     public String getNombre() {
         return nombre;
     }

@@ -68,9 +68,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         mostrarImagen.setMinimumSize(new java.awt.Dimension(131, 23));
         jPanel1.add(mostrarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 275, 70));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 102, 0));
         jLabel1.setText("CAP N' CAP");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+        jLabel1.setToolTipText("");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/capibaraFondo1Menu.png"))); // NOI18N
         jLabel2.setText("jLabel2");

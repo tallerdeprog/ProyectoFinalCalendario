@@ -48,14 +48,17 @@ public class GuardarEvento extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        GuardarEvento.setBackground(new java.awt.Color(255, 204, 153));
         GuardarEvento.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel1.setText("Minuto");
         GuardarEvento.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
-        GuardarEvento.add(nombreDelEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 560, -1));
+        GuardarEvento.add(nombreDelEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 530, -1));
 
+        jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         jLabel2.setText("Nombre del evento");
-        GuardarEvento.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+        GuardarEvento.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Año" }));
         GuardarEvento.add(año, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
@@ -74,6 +77,7 @@ public class GuardarEvento extends javax.swing.JFrame {
         });
         GuardarEvento.add(minuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel3.setText("Descripción");
         GuardarEvento.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
 
@@ -88,9 +92,11 @@ public class GuardarEvento extends javax.swing.JFrame {
         mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mes" }));
         GuardarEvento.add(mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel4.setText("Hora");
         GuardarEvento.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel5.setText("Fecha");
         GuardarEvento.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
@@ -100,7 +106,7 @@ public class GuardarEvento extends javax.swing.JFrame {
                 cancelarEventoActionPerformed(evt);
             }
         });
-        GuardarEvento.add(cancelarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
+        GuardarEvento.add(cancelarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
 
         guardarEvento.setText("Guardar");
         guardarEvento.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +114,7 @@ public class GuardarEvento extends javax.swing.JFrame {
                 guardarEventoActionPerformed(evt);
             }
         });
-        GuardarEvento.add(guardarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, -1, -1));
+        GuardarEvento.add(guardarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
         GuardarEvento.add(descripciónEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 370, 80));
 
         AMPM.addActionListener(new java.awt.event.ActionListener() {
