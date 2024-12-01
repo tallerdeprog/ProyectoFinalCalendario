@@ -1,18 +1,16 @@
 package CalendarioInteractivo;
 
+import static CalendarioInteractivo.GuardarEvento.listaEventos;
 import javax.swing.*;
 import java.awt.*;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
-
-    
     public MenuPrincipal() {
-        
-        
+
         initComponents();
         setLocationRelativeTo(null);  // Centra la ventana en la pantalla
-        
+
     }
 
     //
@@ -94,7 +92,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void calendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calendarioActionPerformed
 
-        
         Calendario ventanaCalendario = new Calendario();
         // Establecer que cuando la ventana secundaria se cierre, la ventana principal se haga visible
         ventanaCalendario.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -114,12 +111,27 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_calendarioActionPerformed
 
     private void eventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventosActionPerformed
-        
+
+        StringBuilder eventos = new StringBuilder();
+
+        if (listaEventos.isEmpty()) {
+            eventos.append("No hay eventos guardados.");
+        } else {
+            for (Evento evento : listaEventos) {
+                eventos.append("Nombre: ").append(evento.getNombre()).append("\n")
+                        .append("Fecha: ").append(evento.getFecha()).append("\n")
+                        .append("Hora: ").append(evento.getHora()).append("\n")
+                        .append("Descripción: ").append(evento.getDescripcion()).append("\n\n");
+            }
+        }
+
+        JOptionPane.showMessageDialog(this, eventos.toString());
+
     }//GEN-LAST:event_eventosActionPerformed
 
     private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
         GuardarEvento ventanaGuardarEvento = new GuardarEvento();
-        
+
         // Establecer que cuando la ventana secundaria se cierre, la ventana principal se haga visible
         ventanaGuardarEvento.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -128,16 +140,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 setVisible(true);  // 'this' se refiere a la ventana principal
             }
         });
-        
+
         // Hacer visible la ventana secundaria
         ventanaGuardarEvento.setVisible(true);
 
         // Ocultar la ventana principal
         this.setVisible(false);
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_guardarEventoActionPerformed
 
     public static void main(String args[]) {

@@ -1,14 +1,16 @@
 package CalendarioInteractivo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import javax.swing.JOptionPane;
 
 public class GuardarEvento extends javax.swing.JFrame {
 
+    public static List<Evento> listaEventos = new ArrayList<>();
 
     public GuardarEvento() {
-
 
         initComponents();
         setLocationRelativeTo(null);
@@ -136,13 +138,33 @@ public class GuardarEvento extends javax.swing.JFrame {
         ventanaMenuPrincipal.setVisible(true);
         this.setVisible(false);
 
-
     }//GEN-LAST:event_cancelarEventoActionPerformed
 
     private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
 
+        String nombre = nombreDelEvento.getText();
+        String diaSeleccionado = (String) dia.getSelectedItem();
+        String mesSeleccionado = (String) mes.getSelectedItem();
+        String añoSeleccionado = (String) año.getSelectedItem();
+        String horaSeleccionada = (String) hora.getSelectedItem();
+        String minutoSeleccionado = (String) minuto.getSelectedItem();
+        String ampmSeleccionado = (String) AMPM.getSelectedItem();
+        String descripcion = descripciónEvento.getText();
 
-        
+        if (nombre.isEmpty() || diaSeleccionado.equals("Dia") || mesSeleccionado.equals("Mes") || añoSeleccionado.equals("Año")) {
+            JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos obligatorios.");
+            return;
+        }
+
+        String fecha = diaSeleccionado + " de " + mesSeleccionado + " de " + añoSeleccionado;
+        String horaCompleta = horaSeleccionada + ":" + minutoSeleccionado + " " + ampmSeleccionado;
+
+        Evento nuevoEvento = new Evento(nombre, fecha, horaCompleta, descripcion);
+        listaEventos.add(nuevoEvento);
+
+        JOptionPane.showMessageDialog(this, "Evento guardado exitosamente.");
+        limpiarCampos();
+
     }//GEN-LAST:event_guardarEventoActionPerformed
 
     private void diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaActionPerformed
@@ -175,11 +197,14 @@ public class GuardarEvento extends javax.swing.JFrame {
 
     // Inicialización de los ComboBoxes
     private void inicializarFecha() {
-        // Llenar los ComboBox de días, meses y años
+        // Llenar el JComboBox de años
+        año.addItem("Año");
         for (int i = 2020; i <= 2030; i++) {
             año.addItem(String.valueOf(i));
         }
 
+        // Llenar el JComboBox de meses
+        mes.addItem("Mes");
         String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
         for (String mesItem : meses) {
             mes.addItem(mesItem);
@@ -192,17 +217,29 @@ public class GuardarEvento extends javax.swing.JFrame {
 
     // Actualizar el número de días dependiendo del mes y el año seleccionado
     private void actualizarDias() {
-        // Limpiar ComboBox de días antes de agregar nuevos
-        dia.removeAllItems();
-
-        int añoSeleccionado = Integer.parseInt((String) año.getSelectedItem());
+        // Verificar si el año seleccionado es válido
+        String añoSeleccionadoStr = (String) año.getSelectedItem();
         String mesSeleccionado = (String) mes.getSelectedItem();
-        YearMonth yearMonth = YearMonth.of(añoSeleccionado, obtenerMes(mesSeleccionado));
-        int diasDelMes = yearMonth.lengthOfMonth();
 
-        // Llenar el ComboBox de días con el número correcto de días
-        for (int i = 1; i <= diasDelMes; i++) {
-            dia.addItem(String.format("%02d", i)); // Formatear los días con dos dígitos
+        // Validar que no se seleccionen valores por defecto como "Año" o "Mes"
+        if (añoSeleccionadoStr.equals("Año") || mesSeleccionado.equals("Mes")) {
+            return; // No realizar ninguna acción si no se ha seleccionado un año o mes válido
+        }
+
+        try {
+            int añoSeleccionado = Integer.parseInt(añoSeleccionadoStr);
+            YearMonth yearMonth = YearMonth.of(añoSeleccionado, obtenerMes(mesSeleccionado));
+            int diasDelMes = yearMonth.lengthOfMonth();
+
+            // Limpiar ComboBox de días antes de agregar nuevos
+            dia.removeAllItems();
+
+            // Llenar el ComboBox de días con el número correcto de días
+            for (int i = 1; i <= diasDelMes; i++) {
+                dia.addItem(String.format("%02d", i)); // Formatear los días con dos dígitos
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "El año seleccionado no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -301,6 +338,17 @@ public class GuardarEvento extends javax.swing.JFrame {
                 new GuardarEvento().setVisible(true);
             }
         });
+    }
+
+    private void limpiarCampos() {
+        nombreDelEvento.setText("");
+        descripciónEvento.setText("");
+        año.setSelectedIndex(0);
+        mes.setSelectedIndex(0);
+        dia.setSelectedIndex(0);
+        hora.setSelectedIndex(0);
+        minuto.setSelectedIndex(0);
+        AMPM.setSelectedIndex(0);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

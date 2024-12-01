@@ -14,11 +14,20 @@ public class Evento {
         this.descripcion = descripcion;
     }
 
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre + "\nFecha: " + fecha + "\nHora: " + hora + "\nDescripción: " + descripcion + "\n";
+    public String getNombre() {
+        return nombre;
     }
 
-    // Getters y setters (opcional)
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
 }
 
