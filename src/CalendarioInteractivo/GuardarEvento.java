@@ -199,7 +199,7 @@ public class GuardarEvento extends javax.swing.JFrame {
     private void inicializarFecha() {
         // Llenar el JComboBox de años
         año.addItem("Año");
-        for (int i = 2020; i <= 2030; i++) {
+        for (int i = 2024; i <= 2070; i++) {
             año.addItem(String.valueOf(i));
         }
 

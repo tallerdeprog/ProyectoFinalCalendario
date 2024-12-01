@@ -112,22 +112,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void eventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventosActionPerformed
 
-        StringBuilder eventos = new StringBuilder();
-
         if (listaEventos.isEmpty()) {
-            eventos.append("No hay eventos guardados.");
+            JOptionPane.showMessageDialog(this, "No hay eventos guardados.", "Eventos", JOptionPane.INFORMATION_MESSAGE);
         } else {
+            // Crear un JLabel con un GIF animado
+            ImageIcon gifIcon = new ImageIcon("src/Imagenes/capibara.gif");
+            JLabel gifLabel = new JLabel(gifIcon);
+
+            // Crear el texto de los eventos
+            StringBuilder eventos = new StringBuilder();
             for (Evento evento : listaEventos) {
-                eventos.append("Nombre: ").append(evento.getNombre()).append("\n")
-                        .append("Fecha: ").append(evento.getFecha()).append("\n")
-                        .append("Hora: ").append(evento.getHora()).append("\n")
-                        .append("Descripción: ").append(evento.getDescripcion()).append("\n\n");
+                eventos.append("▶ Nombre: ").append(evento.getNombre()).append("\n")
+                        .append("   Fecha: ").append(evento.getFecha()).append("\n")
+                        .append("   Hora: ").append(evento.getHora()).append("\n")
+                        .append("   Descripción: ").append(evento.getDescripcion()).append("\n\n");
             }
+            JLabel textoEventos = new JLabel("<html>" + eventos.toString().replace("\n", "<br>") + "</html>");
+
+            // Crear un panel para combinar el GIF y el texto
+            JPanel panel = new JPanel();
+            panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+            panel.add(gifLabel);
+            panel.add(Box.createVerticalStrut(10)); // Espaciado entre el GIF y el texto
+            panel.add(textoEventos);
+
+            // Mostrar el JOptionPane personalizado
+            JOptionPane.showMessageDialog(this, panel, "Lista de Eventos", JOptionPane.PLAIN_MESSAGE);
         }
 
-        JOptionPane.showMessageDialog(this, eventos.toString());
 
-        
     }//GEN-LAST:event_eventosActionPerformed
 
     private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
