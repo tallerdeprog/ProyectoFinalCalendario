@@ -2,9 +2,9 @@
 package CalendarioInteractivo;
 
 public class Evento {
-    private String nombre;
+    private String nombre; //sadasd
     private String fecha;
-    private String hora;
+    private String hora; //a
     private String descripcion;
 
     public Evento(String nombre, String fecha, String hora, String descripcion) {
