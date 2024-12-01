@@ -127,6 +127,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(this, eventos.toString());
 
+        
     }//GEN-LAST:event_eventosActionPerformed
 
     private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
