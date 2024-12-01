@@ -134,7 +134,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .append("   Descripción: ").append(evento.getDescripcion()).append("\n\n");
             }
             JLabel textoEventos = new JLabel("<html>" + eventos.toString().replace("\n", "<br>") + "</html>");
-            textoEventos.setAlignmentX(JLabel.LEFT_ALIGNMENT); // Mantener alineación a la izquierda
+            textoEventos.setAlignmentX(JLabel.CENTER_ALIGNMENT); // Mantener alineación a la izquierda
 
             // Crear un panel para combinar el GIF y el texto
             JPanel panel = new JPanel();
