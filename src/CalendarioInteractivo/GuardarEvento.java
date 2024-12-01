@@ -6,7 +6,10 @@ import javax.swing.JOptionPane;
 
 public class GuardarEvento extends javax.swing.JFrame {
 
+
     public GuardarEvento() {
+
+
         initComponents();
         setLocationRelativeTo(null);
 
@@ -15,7 +18,7 @@ public class GuardarEvento extends javax.swing.JFrame {
         inicializarFecha();
 
         inicializarHoraYMinuto();
-        
+
         inicializarHoraMinutoAMPM();
 
     }
@@ -137,6 +140,8 @@ public class GuardarEvento extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarEventoActionPerformed
 
     private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
+
+
         
     }//GEN-LAST:event_guardarEventoActionPerformed
 
@@ -245,22 +250,22 @@ public class GuardarEvento extends javax.swing.JFrame {
         }
 
     }
-    
+
     private void inicializarHoraMinutoAMPM() {
-    // Llenar horas (1 a 12)
-    for (int i = 1; i <= 12; i++) {
-        hora.addItem(String.valueOf(i));
-    }
+        // Llenar horas (1 a 12)
+        for (int i = 1; i <= 12; i++) {
+            hora.addItem(String.valueOf(i));
+        }
 
-    // Llenar minutos (0 a 59)
-    for (int i = 0; i < 60; i++) {
-        minuto.addItem(String.format("%02d", i)); // Formato 00, 01, etc.
-    }
+        // Llenar minutos (0 a 59)
+        for (int i = 0; i < 60; i++) {
+            minuto.addItem(String.format("%02d", i)); // Formato 00, 01, etc.
+        }
 
-    // Llenar AM/PM
-    AMPM.addItem("AM");
-    AMPM.addItem("PM");
-}
+        // Llenar AM/PM
+        AMPM.addItem("AM");
+        AMPM.addItem("PM");
+    }
 
     // Métodos para cancelar y guardar evento (aún por implementar)
     /**
@@ -297,17 +302,6 @@ public class GuardarEvento extends javax.swing.JFrame {
             }
         });
     }
-
-    private boolean validarAMPM() {
-    if (AMPM.getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(this, "Por favor, selecciona AM o PM.");
-        return false;
-    }
-    return true;
-    
-    
-    
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> AMPM;

@@ -5,10 +5,14 @@ import java.awt.*;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
+
+    
     public MenuPrincipal() {
+        
+        
         initComponents();
         setLocationRelativeTo(null);  // Centra la ventana en la pantalla
-
+        
     }
 
     //
@@ -90,6 +94,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void calendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calendarioActionPerformed
 
+        
         Calendario ventanaCalendario = new Calendario();
         // Establecer que cuando la ventana secundaria se cierre, la ventana principal se haga visible
         ventanaCalendario.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -109,7 +114,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_calendarioActionPerformed
 
     private void eventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventosActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_eventosActionPerformed
 
     private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
@@ -129,6 +134,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         // Ocultar la ventana principal
         this.setVisible(false);
+        
+        
+        
+        
     }//GEN-LAST:event_guardarEventoActionPerformed
 
     public static void main(String args[]) {

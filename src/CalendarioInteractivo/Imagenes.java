@@ -7,6 +7,8 @@ public class Imagenes {
     public static ImageIcon fondoMenu1;
     //public static ImageIcon otroIcono;
     
+    
+    
     // Método para cargar las imágenes
     public static void loadImages() {
         fondoMenu1 = new ImageIcon("assets/imagenes/capibaraFondo1Menu.png");
