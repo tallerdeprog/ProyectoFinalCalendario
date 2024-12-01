@@ -137,12 +137,7 @@ public class GuardarEvento extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarEventoActionPerformed
 
     private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
-        // Validar que se seleccionaron hora, minuto y AM/PM
-    if (hora.getSelectedItem() == null || minuto.getSelectedItem() == null || AMPM.getSelectedItem() == null) {
-        JOptionPane.showMessageDialog(this, "Por favor, completa la selección de hora.");
-        return;
-    }
-    
+        
     }//GEN-LAST:event_guardarEventoActionPerformed
 
     private void diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaActionPerformed
