@@ -113,7 +113,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_eventosActionPerformed
 
     private void guardarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarEventoActionPerformed
-        // TODO add your handling code here:
+        GuardarEvento ventanaGuardarEvento = new GuardarEvento();
+        
+        // Establecer que cuando la ventana secundaria se cierre, la ventana principal se haga visible
+        ventanaGuardarEvento.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Mostrar la ventana principal nuevamente cuando se cierre la ventana secundaria
+                setVisible(true);  // 'this' se refiere a la ventana principal
+            }
+        });
+        
+        // Hacer visible la ventana secundaria
+        ventanaGuardarEvento.setVisible(true);
+
+        // Ocultar la ventana principal
+        this.setVisible(false);
     }//GEN-LAST:event_guardarEventoActionPerformed
 
     public static void main(String args[]) {

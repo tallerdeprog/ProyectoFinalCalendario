@@ -25,7 +25,8 @@ public class Calendario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         setLayout(new BorderLayout());
-
+        
+        
         // Panel principal para contener el calendario
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(new BorderLayout());
@@ -203,23 +204,6 @@ public class Calendario extends javax.swing.JFrame {
             }
         });
         
-        //JFrame frame = new JFrame();
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.setSize(900, 600);  // Ajustar tamaño de la ventanao
-
-        //c
-        //Calendario calendario = new Calendario();
-
-        // Añadir calendario personalizado al frame
-        //frame.add(calendario);
-        //frame.setLocationRelativeTo(null);  // Centrar ventana en pantalla
-        //frame.setVisible(true);
-
-        // Reajuste al cambiar el tamaño de la ventana
-        
-        //frame.setResizable(true);
-
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
