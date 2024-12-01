@@ -115,9 +115,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if (listaEventos.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay eventos guardados.", "Eventos", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            // Crear un JLabel con un GIF animado
+            // Crear un ImageIcon con el GIF animado
             ImageIcon gifIcon = new ImageIcon("src/Imagenes/capibara.gif");
-            JLabel gifLabel = new JLabel(gifIcon);
+
+            // Redimensionar el GIF
+            Image gifImage = gifIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT); // Ajusta las dimensiones
+            ImageIcon gifRedimensionado = new ImageIcon(gifImage);
+
+            JLabel gifLabel = new JLabel(gifRedimensionado);
+            gifLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT); // Centrar horizontalmente el GIF
 
             // Crear el texto de los eventos
             StringBuilder eventos = new StringBuilder();
@@ -128,13 +134,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .append("   Descripción: ").append(evento.getDescripcion()).append("\n\n");
             }
             JLabel textoEventos = new JLabel("<html>" + eventos.toString().replace("\n", "<br>") + "</html>");
+            textoEventos.setAlignmentX(JLabel.LEFT_ALIGNMENT); // Mantener alineación a la izquierda
 
             // Crear un panel para combinar el GIF y el texto
             JPanel panel = new JPanel();
             panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-            panel.add(gifLabel);
+
+            // Añadir el GIF centrado
+            JPanel gifPanel = new JPanel();
+            gifPanel.setLayout(new BoxLayout(gifPanel, BoxLayout.X_AXIS)); // Layout horizontal
+            gifPanel.add(Box.createHorizontalGlue()); // Espaciado flexible a la izquierda
+            gifPanel.add(gifLabel); // Añadir el GIF
+            gifPanel.add(Box.createHorizontalGlue()); // Espaciado flexible a la derecha
+
+            panel.add(gifPanel); // Añadir el GIF al panel principal
             panel.add(Box.createVerticalStrut(10)); // Espaciado entre el GIF y el texto
-            panel.add(textoEventos);
+            panel.add(textoEventos); // Añadir el texto
 
             // Mostrar el JOptionPane personalizado
             JOptionPane.showMessageDialog(this, panel, "Lista de Eventos", JOptionPane.PLAIN_MESSAGE);
