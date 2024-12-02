@@ -18,49 +18,39 @@ public class Calendario extends javax.swing.JFrame {
     
     public Calendario() {
         
-        
-        
         setSize(800, 600);
-        
         setLocationRelativeTo(null);
-        
         setLayout(new BorderLayout());
-        
-        
-        // Panel principal para contener el calendario
-        JPanel panelPrincipal = new JPanel();
-        panelPrincipal.setLayout(new BorderLayout());
 
-        // Imagen personalizada
-        ImageIcon imagenPersonalizada = new ImageIcon("src/imagenes/capibaraFondo1Menu.png");
+        // Imagen personalizada para el fondo
+        ImageIcon imagenPersonalizada = new ImageIcon("src/imagenes/tema1.png");
 
         // Panel del fondo
         JPanel panelConImagen = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                // Tamaño imagen
                 g.drawImage(imagenPersonalizada.getImage(), 0, 0, getWidth(), getHeight(), this);
             }
         };
-        panelConImagen.setLayout(new BorderLayout()); //Posición del calendario encima
+        panelConImagen.setLayout(new BorderLayout());
 
-        //Hora
+        // Hora actual
         labelHora = new JLabel();
         labelHora.setFont(new Font("Arial", Font.BOLD, 24));
-        labelHora.setForeground(Color.BLACK);  // Cambia el color a blanco para que sea visible sobre la imagen
+        labelHora.setForeground(Color.WHITE);
         labelHora.setHorizontalAlignment(SwingConstants.CENTER);
 
-        //Panel encima
+        // Panel encima de la imagen
         JPanel panelSobreImagen = new JPanel(new BorderLayout());
-        panelSobreImagen.setOpaque(false); // Hacer transparente para ver la imagen debajo
+        panelSobreImagen.setOpaque(false);
 
-        //Columnas y filas del calendario
+        // Crear el panel del calendario
         JPanel panelCalendario = new JPanel();
-        panelCalendario.setLayout(new GridLayout(6, 7)); //filas,columnas
-        panelCalendario.setOpaque(false); // transparencia de imagen
+        panelCalendario.setLayout(new GridLayout(6, 7));
+        panelCalendario.setOpaque(false);
 
-        //Fecha actual
+        // Fecha actual
         LocalDate fechaActual = LocalDate.now();
         int diaActual = fechaActual.getDayOfMonth();
 
@@ -69,68 +59,62 @@ public class Calendario extends javax.swing.JFrame {
         for (String dia : diasSemana) {
             JLabel labelDia = new JLabel(dia, SwingConstants.CENTER);
             labelDia.setFont(new Font("Arial", Font.BOLD, 16));
-            labelDia.setBorder(BorderFactory.createLineBorder(Color.BLACK));
             labelDia.setOpaque(true);
-            labelDia.setBackground(new Color(255, 255, 255, 150)); //Transparencia
+            labelDia.setBackground(new Color(100, 100, 100, 180));
+            labelDia.setForeground(Color.WHITE);
             panelCalendario.add(labelDia);
         }
 
-        // Obtener el mes y el año actuales
+        // Obtener mes y año actuales
         YearMonth mesActual = YearMonth.now();
-        int diasEnMes = mesActual.lengthOfMonth();  // Días en el mes actual
+        int diasEnMes = mesActual.lengthOfMonth();
         String nombreMes = mesActual.getMonth().getDisplayName(TextStyle.FULL, Locale.getDefault());
         int añoActual = mesActual.getYear();
 
-        // Día inicial del mes (7: Domingo, 1: Lunes)
-        int primerDia = mesActual.atDay(1).getDayOfWeek().getValue();  // Lunes = 1, Domingo = 7
-
-        // Ajustar para que el domingo sea el último (convertimos 7 en 0 para que comience en domingo)
-        primerDia = primerDia % 7;
+        // Día inicial del mes (0 para domingo)
+        int primerDia = mesActual.atDay(1).getDayOfWeek().getValue() % 7;
 
         // Añadir espacios vacíos hasta el primer día del mes
         for (int i = 0; i < primerDia; i++) {
-            panelCalendario.add(new JLabel(""));  // Celdas vacías
+            panelCalendario.add(new JLabel(""));
         }
 
-        // Añadir los días del mes, día actual resaltado
+        // Añadir días del mes
         for (int i = 1; i <= diasEnMes; i++) {
             JLabel labelDiaMes = new JLabel(String.valueOf(i), SwingConstants.CENTER);
             labelDiaMes.setFont(new Font("Arial", Font.PLAIN, 14));
-            labelDiaMes.setBorder(BorderFactory.createLineBorder(Color.BLACK));
             labelDiaMes.setOpaque(true);
-            labelDiaMes.setBackground(new Color(255, 255, 255, 150)); // Fondo semitransparente
+            labelDiaMes.setBackground(new Color(255, 255, 255, 150));
+            labelDiaMes.setForeground(Color.BLACK);
+            labelDiaMes.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
+            // Resaltar el día actual
             if (i == diaActual) {
-                labelDiaMes.setOpaque(true);
-                labelDiaMes.setBackground(Color.YELLOW);  // Resaltar el día actual
-                labelDiaMes.setBorder(BorderFactory.createLineBorder(Color.RED, 2));  // Borde rojo
+                labelDiaMes.setBackground(new Color(255, 215, 0)); // Fondo dorado
+                labelDiaMes.setForeground(Color.BLACK);
+                labelDiaMes.setFont(new Font("Arial", Font.BOLD, 16));
+                labelDiaMes.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
             }
 
             panelCalendario.add(labelDiaMes);
         }
 
-        // Panel superior con nombre del mes y año
+        // Panel superior con el nombre del mes y año
         JLabel labelMesAno = new JLabel(nombreMes.toUpperCase() + " " + añoActual, SwingConstants.CENTER);
         labelMesAno.setFont(new Font("Arial", Font.BOLD, 24));
-        labelMesAno.setForeground(Color.WHITE); // Texto blanco
+        labelMesAno.setForeground(Color.WHITE);
         labelMesAno.setOpaque(true);
-        labelMesAno.setBackground(new Color(0, 0, 0, 150)); // Fondo semitransparente 
+        labelMesAno.setBackground(new Color(0, 0, 0, 180));
 
-        // Añadir el calendario con margen al centro del panel
+        // Añadir elementos al panel principal
         panelSobreImagen.add(labelMesAno, BorderLayout.NORTH);
         panelSobreImagen.add(panelCalendario, BorderLayout.CENTER);
-
-        // Añadir la hora al panel superior
         panelSobreImagen.add(labelHora, BorderLayout.SOUTH);
 
-        // Añadir el panel con la imagen al panel principal
         panelConImagen.add(panelSobreImagen, BorderLayout.CENTER);
-
-        // Añadir el panel completo al contenedor
         add(panelConImagen, BorderLayout.CENTER);
 
         actualizarHora();
-
         iniciarTemporizador();
     }
 

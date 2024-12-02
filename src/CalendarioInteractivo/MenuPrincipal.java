@@ -6,11 +6,44 @@ import java.awt.*;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private Temas ventanaTemas;
+    
     public MenuPrincipal() {
 
         initComponents();
         setLocationRelativeTo(null);  // Centra la ventana en la pantalla
 
+        // Configurar el JLabel del fondo
+        /*fondo = new JLabel();
+        fondo.setBounds(0, 0, getWidth(), getHeight()); // Tamaño del JLabel
+        fondo.setIcon(new ImageIcon(getClass().getResource("/Imagenes/tema1.png"))); // Imagen predeterminada
+        add(fondo); // Añadir el JLabel al JFrame
+        setLayout(null); // Layout absoluto para que el JLabel cubra todo*/
+    }
+
+    public void cambiarTema(String nombreImagen) {
+        // Asegúrate de que el nombre de la imagen esté bien formado
+        String rutaImagen = "/Imagenes/" + nombreImagen;
+
+        // Usar try-catch para manejar errores al cargar la imagen
+        try {
+            ImageIcon originalImage = new ImageIcon(getClass().getResource(rutaImagen));
+
+            // Obtener el tamaño del fondo (JLabel)
+            int width = fondo.getWidth();
+            int height = fondo.getHeight();
+
+            // Redimensionar la imagen para que se ajuste al tamaño del JLabel
+            Image scaledImage = originalImage.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+            // Crear un nuevo ImageIcon con la imagen redimensionada
+            ImageIcon nuevaImagen = new ImageIcon(scaledImage);
+
+            // Cambiar el ícono del fondo con la nueva imagen escalada
+            fondo.setIcon(nuevaImagen);
+        } catch (Exception e) {
+            System.out.println("Error al cargar la imagen: " + e.getMessage());
+        }
     }
 
     //
@@ -22,9 +55,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         calendario = new javax.swing.JButton();
         guardarEvento = new javax.swing.JButton();
         eventos = new javax.swing.JButton();
-        mostrarImagen = new javax.swing.JButton();
+        temas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -62,11 +95,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 275, 71));
 
-        mostrarImagen.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
-        mostrarImagen.setText("Mostrar Imagen");
-        mostrarImagen.setMaximumSize(new java.awt.Dimension(131, 23));
-        mostrarImagen.setMinimumSize(new java.awt.Dimension(131, 23));
-        jPanel1.add(mostrarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 275, 70));
+        temas.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
+        temas.setText("Temas");
+        temas.setMaximumSize(new java.awt.Dimension(131, 23));
+        temas.setMinimumSize(new java.awt.Dimension(131, 23));
+        temas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                temasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(temas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 275, 70));
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 102, 0));
@@ -74,9 +112,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/capibaraFondo1Menu.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 470));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tema1.png"))); // NOI18N
+        fondo.setText("jLabel2");
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 470));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,6 +219,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_guardarEventoActionPerformed
 
+    private void temasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temasActionPerformed
+
+        
+        Temas ventanaTemas = new Temas(this);
+        
+        // Verificar si la ventana Temas ya está abierta
+    if (ventanaTemas == null || !ventanaTemas.isVisible()) {
+        // Si no está abierta, crear una nueva instancia y mostrarla
+        ventanaTemas = new Temas(this);  // Crear la nueva ventana Temas
+        ventanaTemas.setVisible(true);    // Hacerla visible
+        
+        // Ocultar la ventana principal mientras se muestra Temas
+        this.setVisible(false);
+    } else {
+        // Si Temas ya está abierta, no hacer nada o puedes mostrar un mensaje
+        System.out.println("La ventana de Temas ya está abierta.");
+    }
+
+    }//GEN-LAST:event_temasActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -218,10 +276,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calendario;
     private javax.swing.JButton eventos;
+    private javax.swing.JLabel fondo;
     private javax.swing.JButton guardarEvento;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton mostrarImagen;
+    private javax.swing.JButton temas;
     // End of variables declaration//GEN-END:variables
+
 }

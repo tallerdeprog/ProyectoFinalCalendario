@@ -2,7 +2,6 @@ package CalendarioInteractivo;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDate;
 import java.time.YearMonth;
 import javax.swing.JOptionPane;
 
@@ -53,33 +52,33 @@ public class GuardarEvento extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel1.setText("Minuto");
-        GuardarEvento.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
-        GuardarEvento.add(nombreDelEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 530, -1));
+        GuardarEvento.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
+        GuardarEvento.add(nombreDelEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 530, 30));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         jLabel2.setText("Nombre del evento");
-        GuardarEvento.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+        GuardarEvento.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
         año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Año" }));
-        GuardarEvento.add(año, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        GuardarEvento.add(año, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 80, 30));
 
         hora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 horaActionPerformed(evt);
             }
         });
-        GuardarEvento.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+        GuardarEvento.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 80, 30));
 
         minuto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minutoActionPerformed(evt);
             }
         });
-        GuardarEvento.add(minuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, -1, -1));
+        GuardarEvento.add(minuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 80, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel3.setText("Descripción");
-        GuardarEvento.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
+        GuardarEvento.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, -1, -1));
 
         dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dia" }));
         dia.addActionListener(new java.awt.event.ActionListener() {
@@ -87,18 +86,18 @@ public class GuardarEvento extends javax.swing.JFrame {
                 diaActionPerformed(evt);
             }
         });
-        GuardarEvento.add(dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
+        GuardarEvento.add(dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 80, 30));
 
         mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mes" }));
-        GuardarEvento.add(mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+        GuardarEvento.add(mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 80, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel4.setText("Hora");
-        GuardarEvento.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+        GuardarEvento.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel5.setText("Fecha");
-        GuardarEvento.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
+        GuardarEvento.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 50, 30));
 
         cancelarEvento.setText("Cancelar");
         cancelarEvento.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +105,7 @@ public class GuardarEvento extends javax.swing.JFrame {
                 cancelarEventoActionPerformed(evt);
             }
         });
-        GuardarEvento.add(cancelarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
+        GuardarEvento.add(cancelarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 90, 30));
 
         guardarEvento.setText("Guardar");
         guardarEvento.addActionListener(new java.awt.event.ActionListener() {
@@ -114,15 +113,15 @@ public class GuardarEvento extends javax.swing.JFrame {
                 guardarEventoActionPerformed(evt);
             }
         });
-        GuardarEvento.add(guardarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
-        GuardarEvento.add(descripciónEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 370, 80));
+        GuardarEvento.add(guardarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 90, 30));
+        GuardarEvento.add(descripciónEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 530, 80));
 
         AMPM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AMPMActionPerformed(evt);
             }
         });
-        GuardarEvento.add(AMPM, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, -1, -1));
+        GuardarEvento.add(AMPM, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 80, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -250,7 +249,7 @@ public class GuardarEvento extends javax.swing.JFrame {
     }
 
     // Obtener el número correspondiente al mes (1 - 12)
-    private int obtenerMes(String mes) {
+    public int obtenerMes(String mes) {
         switch (mes) {
             case "Enero":
                 return 1;
