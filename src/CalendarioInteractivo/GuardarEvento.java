@@ -53,7 +53,7 @@ public class GuardarEvento extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel1.setText("Minuto");
         GuardarEvento.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
-        GuardarEvento.add(nombreDelEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 530, 30));
+        GuardarEvento.add(nombreDelEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 530, 30));
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         jLabel2.setText("Nombre del evento");
@@ -67,14 +67,14 @@ public class GuardarEvento extends javax.swing.JFrame {
                 horaActionPerformed(evt);
             }
         });
-        GuardarEvento.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 80, 30));
+        GuardarEvento.add(hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 80, 30));
 
         minuto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minutoActionPerformed(evt);
             }
         });
-        GuardarEvento.add(minuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 80, 30));
+        GuardarEvento.add(minuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 80, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel3.setText("Descripción");
@@ -105,7 +105,7 @@ public class GuardarEvento extends javax.swing.JFrame {
                 cancelarEventoActionPerformed(evt);
             }
         });
-        GuardarEvento.add(cancelarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 90, 30));
+        GuardarEvento.add(cancelarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 90, 30));
 
         guardarEvento.setText("Guardar");
         guardarEvento.addActionListener(new java.awt.event.ActionListener() {
@@ -113,8 +113,8 @@ public class GuardarEvento extends javax.swing.JFrame {
                 guardarEventoActionPerformed(evt);
             }
         });
-        GuardarEvento.add(guardarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 90, 30));
-        GuardarEvento.add(descripciónEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 530, 80));
+        GuardarEvento.add(guardarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 90, 30));
+        GuardarEvento.add(descripciónEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 530, 80));
 
         AMPM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,14 +180,12 @@ public class GuardarEvento extends javax.swing.JFrame {
         // Obtener la hora seleccionada
         String horaSeleccionada = (String) hora.getSelectedItem();
         System.out.println("Hora seleccionada: " + horaSeleccionada);
-        // Aquí podrías guardar la hora en una variable global o actualizar un campo
     }//GEN-LAST:event_horaActionPerformed
 
     private void minutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minutoActionPerformed
         // Obtener el minuto seleccionado
         String minutoSeleccionado = (String) minuto.getSelectedItem();
         System.out.println("Minuto seleccionado: " + minutoSeleccionado);
-        // Aquí podrías guardar el minuto en una variable global o actualizar un campo
     }//GEN-LAST:event_minutoActionPerformed
 
     private void AMPMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AMPMActionPerformed
@@ -197,7 +195,7 @@ public class GuardarEvento extends javax.swing.JFrame {
         // Mostrar el valor seleccionado en la consola (para pruebas)
         System.out.println("Selección de AM/PM: " + seleccionAMPM);
 
-        // Puedes almacenar este valor en una variable global o usarlo directamente
+        
     }//GEN-LAST:event_AMPMActionPerformed
 
     // Inicialización de los ComboBoxes
@@ -281,14 +279,14 @@ public class GuardarEvento extends javax.swing.JFrame {
     }
 
     private void inicializarHoraYMinuto() {
-        // Llenar el JComboBox de hora (1 a 12 para formato AM/PM)
+        // Llenar el JComboBox de hora 
         for (int i = 1; i <= 12; i++) {
             hora.addItem(String.valueOf(i));
         }
 
-        // Llenar el JComboBox de minutos (0 a 59)
+        // Llenar el JComboBox de minutos
         for (int i = 0; i < 60; i++) {
-            minuto.addItem(String.format("%02d", i)); // Formato 00, 01, 02, etc.
+            minuto.addItem(String.format("%02d", i)); 
         }
 
     }
@@ -301,7 +299,7 @@ public class GuardarEvento extends javax.swing.JFrame {
 
         // Llenar minutos (0 a 59)
         for (int i = 0; i < 60; i++) {
-            minuto.addItem(String.format("%02d", i)); // Formato 00, 01, etc.
+            minuto.addItem(String.format("%02d", i)); 
         }
 
         // Llenar AM/PM

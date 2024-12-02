@@ -139,29 +139,29 @@ public class Temas extends javax.swing.JFrame {
 
     private void tema2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tema2ActionPerformed
         menuPrincipal.cambiarTema("tema2.jpg");
-        this.dispose();  // Cerrar la ventana de Temas
+        this.dispose(); 
         
  
     }//GEN-LAST:event_tema2ActionPerformed
 
     private void tema3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tema3ActionPerformed
         menuPrincipal.cambiarTema("tema3.png");
-        this.dispose();  // Cerrar la ventana de Temas
+        this.dispose(); 
     }//GEN-LAST:event_tema3ActionPerformed
 
     private void tema4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tema4ActionPerformed
         menuPrincipal.cambiarTema("tema4.png");
-        this.dispose();  // Cerrar la ventana de Temas
+        this.dispose();  
     }//GEN-LAST:event_tema4ActionPerformed
 
     private void tema5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tema5ActionPerformed
         menuPrincipal.cambiarTema("tema5.png");
-        this.dispose();  // Cerrar la ventana de Temas
+        this.dispose();  
     }//GEN-LAST:event_tema5ActionPerformed
 
     private void tema6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tema6ActionPerformed
         menuPrincipal.cambiarTema("tema6.png");
-        this.dispose();  // Cerrar la ventana de Temas
+        this.dispose();  
     }//GEN-LAST:event_tema6ActionPerformed
 
     /**

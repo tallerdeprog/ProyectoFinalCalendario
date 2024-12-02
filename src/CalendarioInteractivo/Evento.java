@@ -2,9 +2,9 @@
 package CalendarioInteractivo;
 
 public class Evento {
-    private String nombre; //sadasd
+    private String nombre;
     private String fecha;
-    private String hora; //a
+    private String hora; 
     private String descripcion;
 
     public Evento(String nombre, String fecha, String hora, String descripcion) {
@@ -13,7 +13,7 @@ public class Evento {
         this.hora = hora;
         this.descripcion = descripcion;
     }
-//////teto deidad
+
     
     public String getNombre() {
         return nombre;

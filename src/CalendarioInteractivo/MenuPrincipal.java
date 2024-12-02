@@ -16,10 +16,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     public void cambiarTema(String nombreImagen) {
-        // Asegúrate de que el nombre de la imagen esté bien formado
+        
+        
         String rutaImagen = "/Imagenes/" + nombreImagen;
 
-        // Usar try-catch para manejar errores al cargar la imagen
+        
         try {
             ImageIcon originalImage = new ImageIcon(getClass().getResource(rutaImagen));
 
@@ -132,14 +133,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 // Mostrar la ventana principal nuevamente cuando se cierre la ventana secundaria
-                setVisible(true);  // 'this' se refiere a la ventana principal
+                setVisible(true);  // 'this' - ventana principal
             }
         });
 
-        // Hacer visible la ventana secundaria
+        // ventana secundaria
         ventanaCalendario.setVisible(true);
 
-        // Ocultar la ventana principal
+        // ventana principal
         this.setVisible(false);
 
     }//GEN-LAST:event_calendarioActionPerformed
@@ -149,17 +150,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if (listaEventos.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay eventos guardados.", "Eventos", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            // Crear un ImageIcon con el GIF animado
+            // GIF animado
             ImageIcon gifIcon = new ImageIcon("src/Imagenes/capibara.gif");
 
-            // Redimensionar el GIF
-            Image gifImage = gifIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT); // Ajusta las dimensiones
+            // Redimensionar
+            Image gifImage = gifIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT); 
             ImageIcon gifRedimensionado = new ImageIcon(gifImage);
 
             JLabel gifLabel = new JLabel(gifRedimensionado);
-            gifLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT); // Centrar horizontalmente el GIF
+            gifLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT); 
 
-            // Crear el texto de los eventos
+            // texto
             StringBuilder eventos = new StringBuilder();
             for (Evento evento : listaEventos) {
                 eventos.append("▶ Nombre: ").append(evento.getNombre()).append("\n")
@@ -168,24 +169,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .append("   Descripción: ").append(evento.getDescripcion()).append("\n\n");
             }
             JLabel textoEventos = new JLabel("<html>" + eventos.toString().replace("\n", "<br>") + "</html>");
-            textoEventos.setAlignmentX(JLabel.CENTER_ALIGNMENT); // Mantener alineación a la izquierda
+            textoEventos.setAlignmentX(JLabel.CENTER_ALIGNMENT); 
 
-            // Crear un panel para combinar el GIF y el texto
+            // panel para GIF y texto
             JPanel panel = new JPanel();
             panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-            // Añadir el GIF centrado
+            // Añadir el GIF 
             JPanel gifPanel = new JPanel();
-            gifPanel.setLayout(new BoxLayout(gifPanel, BoxLayout.X_AXIS)); // Layout horizontal
-            gifPanel.add(Box.createHorizontalGlue()); // Espaciado flexible a la izquierda
-            gifPanel.add(gifLabel); // Añadir el GIF
-            gifPanel.add(Box.createHorizontalGlue()); // Espaciado flexible a la derecha
+            gifPanel.setLayout(new BoxLayout(gifPanel, BoxLayout.X_AXIS)); 
+            gifPanel.add(Box.createHorizontalGlue()); 
+            gifPanel.add(gifLabel); 
+            gifPanel.add(Box.createHorizontalGlue()); 
 
-            panel.add(gifPanel); // Añadir el GIF al panel principal
-            panel.add(Box.createVerticalStrut(10)); // Espaciado entre el GIF y el texto
-            panel.add(textoEventos); // Añadir el texto
+            panel.add(gifPanel); 
+            panel.add(Box.createVerticalStrut(10)); 
+            panel.add(textoEventos); 
 
-            // Mostrar el JOptionPane personalizado
+            
             JOptionPane.showMessageDialog(this, panel, "Lista de Eventos", JOptionPane.PLAIN_MESSAGE);
         }
 
@@ -199,15 +200,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ventanaGuardarEvento.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                // Mostrar la ventana principal nuevamente cuando se cierre la ventana secundaria
-                setVisible(true);  // 'this' se refiere a la ventana principal
+                
+                setVisible(true);  
             }
         });
 
-        // Hacer visible la ventana secundaria
         ventanaGuardarEvento.setVisible(true);
-
-        // Ocultar la ventana principal
         this.setVisible(false);
 
 
