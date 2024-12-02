@@ -47,9 +47,10 @@ public class Temas extends javax.swing.JFrame {
         });
         jPanel1.add(tema1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 70, 20));
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tema1.png"))); // NOI18N
         jLabel2.setText("jLabel1");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 220, 70));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 260, 110));
 
         tema2.setText("Aplicar");
         tema2.addActionListener(new java.awt.event.ActionListener() {
@@ -59,9 +60,10 @@ public class Temas extends javax.swing.JFrame {
         });
         jPanel1.add(tema2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 70, 20));
 
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tema2.jpg"))); // NOI18N
         jLabel8.setText("jLabel1");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 220, 70));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 260, 110));
 
         tema3.setText("Aplicar");
         tema3.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +75,7 @@ public class Temas extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tema3.png"))); // NOI18N
         jLabel9.setText("jLabel1");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 220, 70));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 250, 110));
 
         tema4.setText("Aplicar");
         tema4.addActionListener(new java.awt.event.ActionListener() {
@@ -83,9 +85,10 @@ public class Temas extends javax.swing.JFrame {
         });
         jPanel1.add(tema4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 70, 20));
 
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tema4.png"))); // NOI18N
         jLabel10.setText("jLabel1");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 220, 70));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 260, 110));
 
         tema5.setText("Aplicar");
         tema5.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +100,7 @@ public class Temas extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tema5.png"))); // NOI18N
         jLabel11.setText("jLabel1");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 220, 70));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 250, 100));
 
         tema6.setText("Aplicar");
         tema6.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +112,7 @@ public class Temas extends javax.swing.JFrame {
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tema6.png"))); // NOI18N
         jLabel12.setText("jLabel1");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 220, 70));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 260, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +122,7 @@ public class Temas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

@@ -6,19 +6,13 @@ import java.awt.*;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    private Temas ventanaTemas;
+    
     
     public MenuPrincipal() {
 
         initComponents();
         setLocationRelativeTo(null);  // Centra la ventana en la pantalla
 
-        // Configurar el JLabel del fondo
-        /*fondo = new JLabel();
-        fondo.setBounds(0, 0, getWidth(), getHeight()); // Tamaño del JLabel
-        fondo.setIcon(new ImageIcon(getClass().getResource("/Imagenes/tema1.png"))); // Imagen predeterminada
-        add(fondo); // Añadir el JLabel al JFrame
-        setLayout(null); // Layout absoluto para que el JLabel cubra todo*/
     }
 
     public void cambiarTema(String nombreImagen) {
@@ -223,19 +217,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         
         Temas ventanaTemas = new Temas(this);
-        
-        // Verificar si la ventana Temas ya está abierta
-    if (ventanaTemas == null || !ventanaTemas.isVisible()) {
-        // Si no está abierta, crear una nueva instancia y mostrarla
-        ventanaTemas = new Temas(this);  // Crear la nueva ventana Temas
-        ventanaTemas.setVisible(true);    // Hacerla visible
-        
-        // Ocultar la ventana principal mientras se muestra Temas
-        this.setVisible(false);
-    } else {
-        // Si Temas ya está abierta, no hacer nada o puedes mostrar un mensaje
-        System.out.println("La ventana de Temas ya está abierta.");
-    }
+        ventanaTemas.setVisible(true);
 
     }//GEN-LAST:event_temasActionPerformed
 
