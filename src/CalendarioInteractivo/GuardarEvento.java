@@ -18,7 +18,7 @@ public class GuardarEvento extends javax.swing.JFrame {
 
         inicializarFecha();
 
-        inicializarHoraYMinuto();
+
 
         inicializarHoraMinutoAMPM();
 
@@ -278,18 +278,8 @@ public class GuardarEvento extends javax.swing.JFrame {
         }
     }
 
-    private void inicializarHoraYMinuto() {
-        // Llenar el JComboBox de hora 
-        for (int i = 1; i <= 12; i++) {
-            hora.addItem(String.valueOf(i));
-        }
-
-        // Llenar el JComboBox de minutos
-        for (int i = 0; i < 60; i++) {
-            minuto.addItem(String.format("%02d", i)); 
-        }
-
-    }
+ 
+    
 
     private void inicializarHoraMinutoAMPM() {
         // Llenar horas (1 a 12)
